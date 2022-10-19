@@ -1,15 +1,17 @@
-console.log('select*from usuario');
-const usuarios = await db.selectUsuario();
-console.log(usuarios);
+(async() =>{
+const database = require('./Model/Servers/dborm');
+const Cliente = require('./Model/Entidade/cliente');
 
-console.log('INSERT INTO usuario');
-const result = await db.insertUsuario({nome: "Zé", senha: "uihdssauihus783"});
-console.log(result);
 
-console.log('DELETE FROM usuario');
-const result3 = await db.deleteUsuario(2);
-console.log(result3);
+console.log( "Criar tabela=========");
+const resultado = await database.sequelize.sync();
+console.log(resultado);
 
-console.log('UPDATE USUARIO');
-const result2 = await db.updateUsuario(3, {nome: "Zé José", senha: "hhhdhjjjhsd7368"});
-console.log(result2);
+
+
+
+
+
+
+
+})();
